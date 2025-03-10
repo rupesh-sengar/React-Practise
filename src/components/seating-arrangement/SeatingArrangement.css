@@ -1,0 +1,11 @@
+.seat-container{
+    display: block;
+    width: 200%;
+    background-color: red;
+  }
+  
+  .seat-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns of equal width */
+    padding: 20px;
+  }
