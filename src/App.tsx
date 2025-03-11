@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import { ProgressBar } from "./components/progress-bar/ProgressBar";
+import {BrowserRouter, Routes, Route} from 'react-router'
 
 function App() {
   const [percentage, setPercentage] = useState<number>(0);
@@ -24,7 +25,11 @@ function App() {
 
   return (
     <div className="app-container">
-      <ProgressBar percentage={percentage} />
+      <BrowserRouter>
+      <Routes>
+        <Route path="/progress-bar" element={<ProgressBar percentage={percentage}/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
