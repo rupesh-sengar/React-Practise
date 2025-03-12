@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import { ProgressBar } from "./components/progress-bar/ProgressBar";
-import {BrowserRouter, Routes, Route} from 'react-router'
+import { BrowserRouter, Routes, Route } from "react-router";
+import Table from "./components/table/table";
 
 function App() {
   const [percentage, setPercentage] = useState<number>(0);
@@ -26,9 +27,13 @@ function App() {
   return (
     <div className="app-container">
       <BrowserRouter>
-      <Routes>
-        <Route path="/progress-bar" element={<ProgressBar percentage={percentage}/>}/>
-      </Routes>
+        <Routes>
+          <Route
+            path="/progress-bar"
+            element={<ProgressBar percentage={percentage} />}
+          />
+          <Route path="/table" element={<Table />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
