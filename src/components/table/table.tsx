@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import "./table.css";
-// api: https://randomuser.me/api?results=20
+
 const fetchData = async () => {
-  const response = await fetch("https://randomuser.me/api?results=10");
+  const response = await fetch("https://randomuser.me/api?results=1000");
   const data = await response.json();
   console.log({ data });
   return data;
 };
+
 export default function Table() {
   const [data, setData] = useState<Record<string, any>[]>([]);
   useEffect(() => {
     (async () => {
+      console.log("use effect triggered");
       const apiData = (await fetchData()).results;
       console.log({ apiData });
       setData(apiData);

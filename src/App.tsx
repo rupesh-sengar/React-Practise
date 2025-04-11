@@ -3,6 +3,9 @@ import "./App.css";
 import { ProgressBar } from "./components/progress-bar/ProgressBar";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Table from "./components/table/table";
+import { Loader1 } from "./components/loaders/loaders1";
+import { WindowSize } from "./components/window-size/WindowSize";
+import { Debounce } from "./components/debounce/Debounce";
 
 function App() {
   const [percentage, setPercentage] = useState<number>(0);
@@ -33,6 +36,9 @@ function App() {
             element={<ProgressBar percentage={percentage} />}
           />
           <Route path="/table" element={<Table />} />
+          <Route path="/loader1" element={<Loader1 />} />
+          <Route path="window-size" element={<WindowSize />} />
+          <Route path="/debounce" element={<Debounce />} />
         </Routes>
       </BrowserRouter>
     </div>
